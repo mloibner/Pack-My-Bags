@@ -46,15 +46,36 @@
       </div>
     </header>
     <main>
-      <div class="wrapper">
-        <div class="innerWrapper" id="inputsDate">
-          <div id="selections" class="selections">
-            <div id="location" class="selection"></div>
-
-            <div id="type" class="type"></div>
-            <div id="dates" class="dates"></div>
-          </div>
-        </div>
+        <form id="travelInformation">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-4 cell">
+                        <label>Location
+                            <input type="text" id="inputLocation" placeholder="Sydney">
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-4 cell">
+                        <label>Dates
+                            <input type="date" id="inputDates" class="span2" placeholder="01/01/2020">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+                <fieldset class="large-5 cell">
+                    <legend>Type of the travel</legend>
+                    <input type="radio" class="radio" name="typeTravel" value="Beach" id="typeBeach" required><label for="typeBeach">Beach</label>
+                    <input type="radio" class="radio" name="typeTravel" value="City" id="typeCity"><label for="typeCity">City</label>
+                    <input type="radio" class="radio" name="typeTravel" value="Country" id="typeCountry"><label for="typeCountry">Country</label >
+                </fieldset>
+            </div>
+            <div class="grid-x grid-padding-x">
+                <input type="submit" class="button" id="submitBtn">
+            </div>
+        </form>
+        
         <div clas="innerWrapper" id="weatherImage">
           <div id="imageLocationWeather" class="imageLocationWeather"></div>
         </div>
@@ -82,3 +103,4 @@
     ></script>
   </body>
 </html>
+
