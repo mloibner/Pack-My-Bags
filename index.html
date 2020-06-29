@@ -28,27 +28,26 @@
         <form id="travelInformation">
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-6 cell">
-                        <label>Destination
+                    <div class="large-12 cell">
+                        <label class="paddingPlease">Destination
                             <input type="text" id="inputLocation" placeholder="Sydney">
                         </label>
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-3 cell">
+                    <div class="large-6 cell">
                         <label>Start Date
                             <input type="date" id="inputStartDates" class="span2" placeholder="01/01/2020">
                         </label>
                     </div>
-                    <div class="medium-3 cell">
+                    <div class="large-6 cell">
                         <label>End Date
                             <input type="date" id="inputEndDates" class="span2" placeholder="01/01/2020">
                         </label>
                     </div>
-                </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-                <div class="medium-5 cell">
+                </div>   
+               <div class="grid-x grid-padding-x">
+                <div class="large-12 cell">
                     <label>Type of the travel
                         <select>
                           <option value="default">Where do you want to go?</option>
@@ -57,10 +56,14 @@
                           <option value="country">Country</option>
                         </select>
                       </label>
+                      <div class="grid-x grid-padding-x">
+                        <input type="submit" class="button " id="submitBtn">
+                    </div>
                 </div>
-                <div class="grid-x grid-padding-x">
+                <!-- <div class="grid-x grid-padding-x">
                     <input type="submit" class="button" id="submitBtn">
-                </div>
+                </div> -->
+            </div>
             </div>
         </form>
         <div clas="innerWrapper" id="weatherImage">
