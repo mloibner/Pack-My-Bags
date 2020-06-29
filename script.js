@@ -78,7 +78,6 @@ $("#travelInformation").on("submit", function() {
 
                     $("#itemsList").append(weatherWrapper);
 
-                    console.log(valType);
 
                     if (~currentWeather.indexOf("clouds") && valType === "beach") {
                         let resultList = beach.windy;
@@ -121,7 +120,7 @@ $("#travelInformation").on("submit", function() {
 
                         }
                     }
-                    if (~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist") && valType === "beach") {
+                    if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "beach") {
                         let resultList = beach.rainy;
                         console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
@@ -136,7 +135,7 @@ $("#travelInformation").on("submit", function() {
 
                         }
                     }
-                    if (~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist") && valType === "city") {
+                    if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "city") {
                         let resultList = city.rainy;
                         console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
@@ -149,7 +148,7 @@ $("#travelInformation").on("submit", function() {
 
                         }
                     }
-                    if (~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist") && valType === "country") {
+                    if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "country") {
                         let resultList = country.rainy;
                         console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
