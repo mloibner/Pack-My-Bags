@@ -28,19 +28,19 @@
         <form id="travelInformation">
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-4 cell">
+                    <div class="medium-6 cell">
                         <label>Destination
                             <input type="text" id="inputLocation" placeholder="Sydney">
                         </label>
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-4 cell">
+                    <div class="medium-3 cell">
                         <label>Start Date
                             <input type="date" id="inputStartDates" class="span2" placeholder="01/01/2020">
                         </label>
                     </div>
-                    <div class="medium-4 cell">
+                    <div class="medium-3 cell">
                         <label>End Date
                             <input type="date" id="inputEndDates" class="span2" placeholder="01/01/2020">
                         </label>
@@ -48,15 +48,19 @@
                 </div>
             </div>
             <div class="grid-x grid-padding-x">
-                <fieldset class="large-5 cell">
-                    <legend>Type of the travel</legend>
-                    <input type="radio" class="radio" name="typeTravel" value="Beach" id="typeBeach" required><label for="typeBeach">Beach</label>
-                    <input type="radio" class="radio" name="typeTravel" value="City" id="typeCity"><label for="typeCity">City</label>
-                    <input type="radio" class="radio" name="typeTravel" value="Country" id="typeCountry"><label for="typeCountry">Country</label >
-                </fieldset>
-            </div>
-            <div class="grid-x grid-padding-x">
-                <input type="submit" class="button" id="submitBtn">
+                <div class="medium-5 cell">
+                    <label>Type of the travel
+                        <select>
+                          <option value="default">Where do you want to go?</option>
+                          <option value="beach">Beach</option>
+                          <option value="city">City</option>
+                          <option value="country">Country</option>
+                        </select>
+                      </label>
+                </div>
+                <div class="grid-x grid-padding-x">
+                    <input type="submit" class="button" id="submitBtn">
+                </div>
             </div>
         </form>
         <div clas="innerWrapper" id="weatherImage">
