@@ -35,3 +35,23 @@ form {
   text-align: center;
   justify-content: center;
 }
+
+.innerWrapper {
+  margin: 5%, 30%, 5%, 30%;
+  text-align: left;
+}
+
+.button {
+  background-color: salmon;
+}
+.button:hover {
+  background-color:salmon;
+  opacity: 70%;
+  transition: ease-in;
+}
+
+.button:focus {
+  background-color: salmon;
+  border-color: none;
+  outline: none;
+}

@@ -215,3 +215,8 @@ $("#travelInformation").on("submit", function() {
 
     })
     //
+
+
+    let buttonchoice = ['add', 'subtract']
+
+    buttonchoice.forEach()
