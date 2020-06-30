@@ -90,6 +90,8 @@ $("#travelInformation").on("submit", function() {
 
 
 
+
+
                             $("#itemsList").append(bagWrapper);
 
                         }
