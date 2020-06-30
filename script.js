@@ -10,19 +10,19 @@ const urlAPI = "https://api.openweathermap.org/data/2.5/onecall?"
 let result = {};
 
 let country = {
-    "windy": ['parker jacket', 'jeans', 'socks', 'skivy', 'scalf'],
-    "rainy": ['raincoat', 'gumboots', 'jeans', 'skivy', 'umbrella'],
-    "sunny": ['shorts', 't-shirt', 'hat', 'suncream', 'sneakers']
+    "windy": ['Parker Jacket', 'Jeans', 'Socks', 'Skivy', 'Scalf'],
+    "rainy": ['Raincoat', 'Gumboots', 'Jeans', 'Skivy', 'Umbrella'],
+    "sunny": ['Shorts', 'T-Shirt', 'Hat', 'Suncream', 'Sneakers']
 }
 let city = {
-    "windy": ['coat', 'slacks', 'socks', 'button-up/blouse', 'cardigan'],
-    "rainy": ['trench-coat', 'boots', 'slacks', 'skivy', 'umbrella'],
-    "sunny": ['shorts/skirt', 't-shirt', 'hat', 'suncream', 'sandals']
+    "windy": ['Coat', 'Slacks', 'Socks', 'Button-Up/Blouse', 'Cardigan'],
+    "rainy": ['Trench-Coat', 'Boots', 'Slacks', 'Skivy', 'Umbrella'],
+    "sunny": ['Shorts/Skirt', 'T-Shirt', 'Hat', 'Suncream', 'Sandals']
 }
 let beach = {
-    "windy": ['parker jacket', 'tracksuit', 'socks', 'swim-suit/boardies', 'scalf'],
-    "rainy": ['swim-suit/boardies', 'thongs', 'hoodie', 'shorts', 'umbrella'],
-    "sunny": ['thongs', 'singlet', 'hat', 'suncream', 'swim-suit/boardies']
+    "windy": ['Parker Jacket', 'Tracksuit', 'Socks', 'Swim-Suit/Boardies', 'Scalf'],
+    "rainy": ['Swim-Suit/Boardies', 'Thongs', 'Hoodie', 'Shorts', 'Umbrella'],
+    "sunny": ['Thongs', 'Singlet', 'Hat', 'Suncream', 'Swim-Suit/Boardies']
 }
 
 $("#travelInformation").on("submit", function() {
