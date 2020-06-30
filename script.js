@@ -110,10 +110,14 @@ $("#travelInformation").on("submit", function() {
 
                     // for to show the info of the days of trip
                     for (let i = 0; i < tripDates.length; i++) {
+                        let dayDate = tripDates[i].dt;
                         let dayTemp = tripDates[i].temp.day;
                         let dayWeather = tripDates[i].weather[0].main;
 
+                        dayDate = moment(dayDate * 1000).format('DD-MM-YYYY');
+
                         const dayWeaterWrapper = $("<div>");
+                        const dayWeatherDate = $("<p>");
                         const dayWeatherTemp = $("<p>");
                         const dayWeatherCond = $("<span>");
 
@@ -132,9 +136,10 @@ $("#travelInformation").on("submit", function() {
 
                         }
 
+                        dayWeatherDate.text(dayDate);
                         dayWeatherTemp.text(dayTemp);
 
-                        dayWeaterWrapper.append(dayWeatherTemp, dayWeatherCond);
+                        dayWeaterWrapper.append(dayWeatherDate, dayWeatherTemp, dayWeatherCond);
                         $("#itemsList").append(dayWeaterWrapper);
 
                     }
