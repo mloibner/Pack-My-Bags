@@ -4,6 +4,7 @@ const travelLocation = $("#inputLocation");
 const startDates = $("#inputStartDates");
 const endDates = $("#inputEndDates");
 const typeTravel = $('select');
+let dailyForcast = [];
 
 const urlAPI = "https://api.openweathermap.org/data/2.5/onecall?"
 
@@ -36,12 +37,12 @@ $("#travelInformation").on("submit", function() {
         const searchURL = urlinfo + "q=" + valLocation + "&appid=" + apiKey;
 
 
-
+        valStartDates = moment(valStartDates).unix();
         valEndDates = moment(valEndDates).unix();
 
-        let maxEndDate = moment().add(5, "days").unix();
 
-        console.log(maxEndDate);
+        let maxEndDate = moment().add(9, "days").unix();
+
 
         if (maxEndDate > valEndDates) {
             $.ajax({
@@ -64,24 +65,58 @@ $("#travelInformation").on("submit", function() {
 
                     $("#itemsList").empty();
 
-                    let currentWeather = responseCity.current.weather[0].description;
-                    let currentTemp = responseCity.current.temp;
 
-                    console.log(currentWeather);
-                    console.log(currentTemp);
+
+                    let tripDates = [];
+                    let tempDates = [];
+
+                    dailyForcast = responseCity.daily;
+                    for (let i = 0; i < dailyForcast.length; i++) {
+                        let dates = dailyForcast[i].dt;
+                        let temp = dailyForcast[i].temp.day;
+
+                        if (dates > valStartDates && dates < valEndDates) {
+                            tripDates.push(dailyForcast[i]);
+                            tempDates.push(temp);
+                        }
+                    }
+
+                    for (let i = 0; i < tripDates.length; i++) {
+                        let weatherCondition = tripDates[i].weather[0].main;
+                        console.log(weatherCondition);
+                    }
+
+                    console.log(tripDates);
+                    console.log(tempDates);
+
+                    let sumTemp = 0;
+
+                    for (let i = 0; i < tempDates.length; i++) {
+                        sumTemp += parseInt(tempDates[i], 10); //don't forget to add the base
+                    }
+
+                    let avgTemp = sumTemp / tempDates.length;
+
+                    console.log("sum of array: " + sumTemp);
+                    console.log("avg of array: " + avgTemp);
+
+                    console.log(dailyForcast);
+
+                    console.log("start date: " + valStartDates);
+                    console.log("End date: " + valEndDates);
 
                     let weatherWrapper = $("<h4>");
 
                     // currentWeather = currentWeather.toUpperCase();
 
-                    weatherWrapper.text("The conditions for your trip will be: " + currentWeather);
+                    weatherWrapper.text("The avg temperature for your trip will be: " + avgTemp);
 
                     $("#itemsList").append(weatherWrapper);
 
 
                     if (~currentWeather.indexOf("clouds") && valType === "beach") {
                         let resultList = beach.windy;
-                        console.log(resultList);
+                        //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -98,7 +133,7 @@ $("#travelInformation").on("submit", function() {
                     }
                     if (~currentWeather.indexOf("clouds") && valType === "city") {
                         let resultList = city.windy;
-                        console.log(resultList);
+                        // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -111,7 +146,7 @@ $("#travelInformation").on("submit", function() {
                     }
                     if (~currentWeather.indexOf("clouds") && valType === "country") {
                         let resultList = country.windy;
-                        console.log(resultList);
+                        // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -124,7 +159,7 @@ $("#travelInformation").on("submit", function() {
                     }
                     if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "beach") {
                         let resultList = beach.rainy;
-                        console.log(resultList);
+                        // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -139,7 +174,7 @@ $("#travelInformation").on("submit", function() {
                     }
                     if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "city") {
                         let resultList = city.rainy;
-                        console.log(resultList);
+                        // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -152,7 +187,7 @@ $("#travelInformation").on("submit", function() {
                     }
                     if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "country") {
                         let resultList = country.rainy;
-                        console.log(resultList);
+                        // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -165,7 +200,7 @@ $("#travelInformation").on("submit", function() {
                     }
                     if (~currentWeather.indexOf("sky") && valType === "beach") {
                         let resultList = beach.sunny;
-                        console.log(resultList);
+                        // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -178,7 +213,7 @@ $("#travelInformation").on("submit", function() {
                     }
                     if (~currentWeather.indexOf("sky") && valType === "city") {
                         let resultList = city.sunny;
-                        console.log(resultList);
+                        // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -191,7 +226,7 @@ $("#travelInformation").on("submit", function() {
                     }
                     if (~currentWeather.indexOf("sky") && valType === "country") {
                         let resultList = country.sunny;
-                        console.log(resultList);
+                        // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let bagWrapper = $("<p>");
@@ -208,7 +243,7 @@ $("#travelInformation").on("submit", function() {
 
             })
         } else {
-            alert("Select an end date 5 days from today.")
+            alert("Select an end date 8 days from today.")
         }
 
 
