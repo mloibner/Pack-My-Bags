@@ -62,15 +62,16 @@ $("#travelInformation").on("submit", function() {
                     url: searchCity,
                     method: "GET"
                 }).then(function(responseCity) {
-                    console.log(responseCity);
-
+                    //clear list of items
                     $("#itemsList").empty();
 
-
-
+                    //array for the dates of the trip
                     let tripDates = [];
+
+                    // temperature of the days.
                     let tempDates = [];
 
+                    // for to get the daily weather and temperature for the days that the user select.
                     dailyForcast = responseCity.daily;
                     for (let i = 0; i < dailyForcast.length; i++) {
                         let dates = dailyForcast[i].dt;
@@ -82,37 +83,72 @@ $("#travelInformation").on("submit", function() {
                         }
                     }
 
+                    //empty variable that will recieve sum of the temperature of the days
+                    let sumTemp = 0;
+
+                    //for to add the temperature.
+                    for (let i = 0; i < tempDates.length; i++) {
+                        sumTemp += parseInt(tempDates[i], 10); //don't forget to add the base
+                    }
+
+                    //get the avg of the temp
+                    let avgTemp = sumTemp / tempDates.length;
+
+                    // leave the avg temp with 2 decimals.
+                    avgTemp = avgTemp.toFixed(2);
+
+                    //show on the html the avg temp.
+                    let weatherWrapper = $("<h4>");
+
+                    weatherWrapper.append("The avg temperature for your trip will be: " + avgTemp + "&#8451;");
+
+                    $("#itemsList").append(weatherWrapper);
+
+                    const condWindy = ["Mist", "Smoke", "Haze", "Dust", "Fog", "Sand", "Dust", "Ash", "Squall", "Tornado", "Clouds"];
+                    const condSunny = ["Clear"];
+                    const condRainy = ["Snow", "Rain", "Drizzle", "Thunderstorm"];
+
+
+                    // for to show the info of the days of trip
                     for (let i = 0; i < tripDates.length; i++) {
-                        let weatherCondition = tripDates[i].weather[0].main;
-                        console.log(weatherCondition);
+                        let dayDate = tripDates[i].dt;
+                        let dayTemp = tripDates[i].temp.day;
+                        let dayWeather = tripDates[i].weather[0].main;
+
+                        dayDate = moment(dayDate * 1000).format('DD-MM-YYYY');
+
+                        const dayWeaterWrapper = $("<div>");
+                        const dayWeatherDate = $("<p>");
+                        const dayWeatherTemp = $("<p>");
+                        const dayWeatherCond = $("<span>");
+
+                        if ($.inArray(dayWeather, condWindy) > -1) {
+                            console.log("wind");
+                            dayWeatherCond.append("<i class='fas fa-wind'></i>");
+
+                        }
+                        if ($.inArray(dayWeather, condSunny) > -1) {
+                            dayWeatherCond.append("<i class='fas fa-sun'></i>");
+
+                        }
+                        if ($.inArray(dayWeather, condRainy) > -1) {
+                            console.log("rain");
+                            dayWeatherCond.append("<i class='fas fa-cloud'></i>");
+
+                        }
+
+                        dayWeatherDate.text(dayDate);
+                        dayWeatherTemp.text(dayTemp);
+
+                        dayWeaterWrapper.append(dayWeatherDate, dayWeatherTemp, dayWeatherCond);
+                        $("#itemsList").append(dayWeaterWrapper);
+
                     }
 
                     console.log(tripDates);
                     console.log(tempDates);
 
-                    let sumTemp = 0;
 
-                    for (let i = 0; i < tempDates.length; i++) {
-                        sumTemp += parseInt(tempDates[i], 10); //don't forget to add the base
-                    }
-
-                    let avgTemp = sumTemp / tempDates.length;
-
-                    console.log("sum of array: " + sumTemp);
-                    console.log("avg of array: " + avgTemp);
-
-                    console.log(dailyForcast);
-
-                    console.log("start date: " + valStartDates);
-                    console.log("End date: " + valEndDates);
-
-                    let weatherWrapper = $("<h4>");
-
-                    // currentWeather = currentWeather.toUpperCase();
-
-                    weatherWrapper.text("The avg temperature for your trip will be: " + avgTemp);
-
-                    $("#itemsList").append(weatherWrapper);
 
 
                     if (~currentWeather.indexOf("clouds") && valType === "beach") {
