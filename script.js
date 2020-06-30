@@ -103,6 +103,8 @@ $("#travelInformation").on("submit", function() {
 
                     $("#itemsList").append(weatherWrapper);
 
+
+                    //arrays with the weather conditions.
                     const condWindy = ["Mist", "Smoke", "Haze", "Dust", "Fog", "Sand", "Dust", "Ash", "Squall", "Tornado", "Clouds"];
                     const condSunny = ["Clear"];
                     const condRainy = ["Snow", "Rain", "Drizzle", "Thunderstorm"];
@@ -143,136 +145,127 @@ $("#travelInformation").on("submit", function() {
                         $("#itemsList").append(dayWeaterWrapper);
 
                     }
+                    //create list of cloathes acording to temp and type of trip.
+                    if (avgTemp < 16) {
+                        if (valType === "beach") {
+                            let resultList = beach.windy;
+                            //console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
 
-                    console.log(tripDates);
-                    console.log(tempDates);
+                                let bagWrapper = $("<p>");
 
+                                bagWrapper.text(resultList[i]);
 
+                                $("#itemsList").append(bagWrapper);
+                            }
+                        }
+                        if (valType === "city") {
+                            let resultList = city.windy;
+                            // console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
 
+                                let bagWrapper = $("<p>");
 
-                    if (~currentWeather.indexOf("clouds") && valType === "beach") {
-                        let resultList = beach.windy;
-                        //console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
+                                bagWrapper.text(resultList[i]);
 
-                            let bagWrapper = $("<p>");
+                                $("#itemsList").append(bagWrapper);
+                            }
+                        }
+                        if (valType === "country") {
+                            let resultList = country.windy;
+                            // console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
 
-                            bagWrapper.text(resultList[i]);
+                                let bagWrapper = $("<p>");
 
+                                bagWrapper.text(resultList[i]);
 
+                                $("#itemsList").append(bagWrapper);
 
-
-
-                            $("#itemsList").append(bagWrapper);
-
+                            }
                         }
                     }
-                    if (~currentWeather.indexOf("clouds") && valType === "city") {
-                        let resultList = city.windy;
-                        // console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
+                    if (avgTemp > 16 && avgTemp < 22) {
+                        if (valType === "beach") {
+                            let resultList = beach.rainy;
+                            //console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
 
-                            let bagWrapper = $("<p>");
+                                let bagWrapper = $("<p>");
 
-                            bagWrapper.text(resultList[i]);
+                                bagWrapper.text(resultList[i]);
 
-                            $("#itemsList").append(bagWrapper);
+                                $("#itemsList").append(bagWrapper);
+                            }
+                        }
+                        if (valType === "city") {
+                            let resultList = city.rainy;
+                            // console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
 
+                                let bagWrapper = $("<p>");
+
+                                bagWrapper.text(resultList[i]);
+
+                                $("#itemsList").append(bagWrapper);
+                            }
+                        }
+                        if (valType === "country") {
+                            let resultList = country.rainy;
+                            // console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
+
+                                let bagWrapper = $("<p>");
+
+                                bagWrapper.text(resultList[i]);
+
+                                $("#itemsList").append(bagWrapper);
+
+                            }
                         }
                     }
-                    if (~currentWeather.indexOf("clouds") && valType === "country") {
-                        let resultList = country.windy;
-                        // console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
+                    if (avgTemp > 22) {
+                        if (valType === "beach") {
+                            let resultList = beach.sunny;
+                            //console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
 
-                            let bagWrapper = $("<p>");
+                                let bagWrapper = $("<p>");
 
-                            bagWrapper.text(resultList[i]);
+                                bagWrapper.text(resultList[i]);
 
-                            $("#itemsList").append(bagWrapper);
+                                $("#itemsList").append(bagWrapper);
+                            }
+                        }
+                        if (valType === "city") {
+                            let resultList = city.sunny;
+                            // console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
 
+                                let bagWrapper = $("<p>");
+
+                                bagWrapper.text(resultList[i]);
+
+                                $("#itemsList").append(bagWrapper);
+                            }
+                        }
+                        if (valType === "country") {
+                            let resultList = country.sunny;
+                            // console.log(resultList);
+                            for (let i = 0; i < resultList.length; i++) {
+
+                                let bagWrapper = $("<p>");
+
+                                bagWrapper.text(resultList[i]);
+
+                                $("#itemsList").append(bagWrapper);
+
+                            }
                         }
                     }
-                    if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "beach") {
-                        let resultList = beach.rainy;
-                        // console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
-
-                            let bagWrapper = $("<p>");
-
-                            bagWrapper.text(resultList[i]);
 
 
 
-                            $("#itemsList").append(bagWrapper);
-
-                        }
-                    }
-                    if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "city") {
-                        let resultList = city.rainy;
-                        // console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
-
-                            let bagWrapper = $("<p>");
-
-                            bagWrapper.text(resultList[i]);
-
-                            $("#itemsList").append(bagWrapper);
-
-                        }
-                    }
-                    if ((~currentWeather.indexOf("rain") || ~currentWeather.indexOf("thunderstorm") || ~currentWeather.indexOf("snow") || ~currentWeather.indexOf("mist")) && valType === "country") {
-                        let resultList = country.rainy;
-                        // console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
-
-                            let bagWrapper = $("<p>");
-
-                            bagWrapper.text(resultList[i]);
-
-                            $("#itemsList").append(bagWrapper);
-
-                        }
-                    }
-                    if (~currentWeather.indexOf("sky") && valType === "beach") {
-                        let resultList = beach.sunny;
-                        // console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
-
-                            let bagWrapper = $("<p>");
-
-                            bagWrapper.text(resultList[i]);
-
-                            $("#itemsList").append(bagWrapper);
-
-                        }
-                    }
-                    if (~currentWeather.indexOf("sky") && valType === "city") {
-                        let resultList = city.sunny;
-                        // console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
-
-                            let bagWrapper = $("<p>");
-
-                            bagWrapper.text(resultList[i]);
-
-                            $("#itemsList").append(bagWrapper);
-
-                        }
-                    }
-                    if (~currentWeather.indexOf("sky") && valType === "country") {
-                        let resultList = country.sunny;
-                        // console.log(resultList);
-                        for (let i = 0; i < resultList.length; i++) {
-
-                            let bagWrapper = $("<p>");
-
-                            bagWrapper.text(resultList[i]);
-
-                            $("#itemsList").append(bagWrapper);
-
-                        }
-                    }
                 })
 
 
