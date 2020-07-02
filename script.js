@@ -13,7 +13,7 @@ let result = {};
 let qtdItem = {};
 
 let country = {
-    "windy": ['Parker-Jacket', 'Jeans', 'Socks', 'Skivy', 'Scalf'],
+    "windy": ['Parker Jacket', 'Jeans', 'Socks', 'Skivy', 'Scalf'],
     "rainy": ['Sweater', 'Gumboots', 'Jeans', 'Skivy', 'Flanno'],
     "sunny": ['Shorts', 'T-Shirt', 'Hat', 'Singlet', 'Sneakers']
 }
@@ -23,13 +23,13 @@ let city = {
     "sunny": ['Shorts/Skirt', 'T-Shirt', 'Hat', 'Suncream', 'Sandals']
 }
 let beach = {
-    "windy": ['Parker-Jacket', 'Tracksuit', 'Socks', 'Swim-Suit/Boardies', 'Scalf'],
+    "windy": ['Parker Jacket', 'Tracksuit', 'Socks', 'Swim-Suit/Boardies', 'Scalf'],
     "rainy": ['Swim-Suit/Boardies', 'Thongs', 'Hoodie', 'Shorts', 'Umbrella'],
     "sunny": ['Thongs', 'Singlet', 'Hat', 'Suncream', 'Swim-Suit/Boardies']
 }
 let other = ['Suncream', 'Umbrella']
 
-$("#travelInformation").on("submit", function() {
+$("#travelInformation").on("submit", function(event) {
     event.preventDefault();
 
     let valLocation = travelLocation.val();
@@ -39,13 +39,10 @@ $("#travelInformation").on("submit", function() {
 
     const searchURL = urlinfo + "q=" + valLocation + "&appid=" + apiKey;
 
-
     valStartDates = moment(valStartDates).unix();
     valEndDates = moment(valEndDates).unix();
 
-
     let maxEndDate = moment().add(9, "days").unix();
-
 
     if (maxEndDate > valEndDates) {
         $.ajax({
@@ -106,12 +103,10 @@ $("#travelInformation").on("submit", function() {
 
                 $("#itemsList").append(weatherWrapper);
 
-
                 //arrays with the weather conditions.
                 const condWindy = ["Mist", "Smoke", "Haze", "Dust", "Fog", "Sand", "Dust", "Ash", "Squall", "Tornado", "Clouds"];
                 const condSunny = ["Clear"];
                 const condRainy = ["Snow", "Rain", "Drizzle", "Thunderstorm"];
-
 
                 // for to show the info of the days of trip
                 for (let i = 0; i < tripDates.length; i++) {
@@ -127,18 +122,13 @@ $("#travelInformation").on("submit", function() {
                     const dayWeatherCond = $("<span>");
 
                     if ($.inArray(dayWeather, condWindy) > -1) {
-                        console.log("wind");
                         dayWeatherCond.append("<i class='fas fa-wind'></i>");
-
                     }
                     if ($.inArray(dayWeather, condSunny) > -1) {
                         dayWeatherCond.append("<i class='fas fa-sun'></i>");
-
                     }
-                    if ($.inArray(dayWeather, condRainy) > -1) {
-                        console.log("rain");
+                    if ($.inArray(dayWeather, condRainy) > -1) {;
                         dayWeatherCond.append("<i class='fas fa-cloud'></i>");
-
                     }
 
                     dayWeatherDate.text(dayDate);
@@ -152,245 +142,257 @@ $("#travelInformation").on("submit", function() {
                 if (avgTemp < 16) {
                     if (valType === "beach") {
                         let resultList = beach.windy;
+                        let listWrapper = $("<div class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
                         }
+                        $("#itemsList").append(listWrapper);
                     }
                     if (valType === "city") {
                         let resultList = city.windy;
-                        // console.log(resultList);
+                        let listWrapper = $("<div class='list-wrapper'>");
+                        //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
+
                         }
+                        $("#itemsList").append(listWrapper);
                     }
                     if (valType === "country") {
                         let resultList = country.windy;
-                        // console.log(resultList);
+                        let listWrapper = $("<div class='list-wrapper'>");
+                        //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
 
                         }
+                        $("#itemsList").append(listWrapper);
                     }
                 }
                 if (avgTemp > 16 && avgTemp < 22) {
                     if (valType === "beach") {
                         let resultList = beach.rainy;
+                        let listWrapper = $("<div class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
+
                         }
+                        $("#itemsList").append(listWrapper);
                     }
                     if (valType === "city") {
                         let resultList = city.rainy;
-                        // console.log(resultList);
+                        let listWrapper = $("<div class='list-wrapper'>");
+                        //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
+
                         }
+                        $("#itemsList").append(listWrapper);
                     }
                     if (valType === "country") {
                         let resultList = country.rainy;
-                        // console.log(resultList);
+                        let listWrapper = $("<div class='list-wrapper'>");
+                        //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
+
                         }
+                        $("#itemsList").append(listWrapper);
                     }
                 }
                 if (avgTemp > 22) {
                     if (valType === "beach") {
                         let resultList = beach.sunny;
+                        let listWrapper = $("<div class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
+
                         }
+                        $("#itemsList").append(listWrapper);
                     }
                     if (valType === "city") {
                         let resultList = city.sunny;
-                        // console.log(resultList);
+                        let listWrapper = $("<div class='list-wrapper'>");
+                        //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
+
                         }
+                        $("#itemsList").append(listWrapper);
                     }
                     if (valType === "country") {
                         let resultList = country.sunny;
-                        // console.log(resultList);
+                        let listWrapper = $("<div class='list-wrapper'>");
+                        //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+
                             let item = resultList[i];
 
-                            let bagWrapper = $("<p data-item =" + item + ">");
+                            let itemBag = $("<p data-item ='" + item + "'>");
 
-                            bagWrapper.text(item);
+                            itemBag.text(item);
 
-                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
-                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
-
+                            let addBtn = $("<button data-item='" + item + "' class='plus button btn-plus-min' type='button'>+</button>");
+                            let minBtn = $("<button data-item='" + item + "' class='min button btn-plus-min' type='button'>-</button>");
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, minBtn, addBtn);
+                            itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            $("#itemsList").append(bagWrapper);
+                            listWrapper.append(itemBag);
 
                         }
+                        $("#    ").append(listWrapper);
                     }
                 }
-
-
-
             })
-
-
-
         })
     } else {
         alert("Select an end date 8 days from today.")
     }
-
-    $(".plus").on("click", function() {
-            let $btnItem = $(this);
-
-            console.log();
-        })
-        //
-
-
-
-
 })
 
+//function to add the number of items to bag.
+$(".btn-plus-min").on("click", function() {
+    console.log("clicked");
+    let $btnItem = $(this);
 
-
+    console.log($btnItem);
+    console.log("test");
+})
 
 // Get the modal
 var modal = document.getElementById("myModal");
