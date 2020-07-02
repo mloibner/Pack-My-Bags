@@ -104,12 +104,13 @@ $("#travelInformation").on("submit", function (event) {
         avgTemp = avgTemp.toFixed(2);
 
         //show on the html the avg temp.
-        let weatherWrapper = $("<h4>");
+        let weatherWrapper = $("<div>");
 
         weatherWrapper.append(
           "The avg temperature for your trip will be: " + avgTemp + "&#8451;"
         );
 
+        weatherWrapper.addClass("center");
         $("#itemsList").append(weatherWrapper);
 
         //arrays with the weather conditions.

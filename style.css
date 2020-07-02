@@ -103,6 +103,12 @@ form {
 }
 
 .weatherDiv {
+  margin-top: 1%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+  font-size: large;
 }
