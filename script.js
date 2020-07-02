@@ -104,10 +104,10 @@ $("#travelInformation").on("submit", function (event) {
         avgTemp = avgTemp.toFixed(2);
 
         //show on the html the avg temp.
-        let weatherWrapper = $("<h3>");
-        weatherWrapper.addClass("center");
+        let weatherWrapper = $("<h4>");
+
         weatherWrapper.append(
-          "The avg temperature for your trip will be: " + avgTemp + "&#8451;"
+          "The average temperature for your trip is: " + avgTemp + "&#8451;"
         );
 
         $("#itemsList").append(weatherWrapper);
@@ -140,11 +140,8 @@ $("#travelInformation").on("submit", function (event) {
           const dayWeaterWrapper = $("<div>");
           dayWeaterWrapper.addClass("weatherDiv");
           const dayWeatherDate = $("<p>");
-          dayWeatherDate.addClass("weatherPadding");
           const dayWeatherTemp = $("<p>");
-          dayWeatherTemp.addClass("weatherPadding");
           const dayWeatherCond = $("<span>");
-          dayWeatherCond.addClass("weatherPadding");
 
           if ($.inArray(dayWeather, condWindy) > -1) {
             dayWeatherCond.append("<i class='fas fa-wind'></i>");
