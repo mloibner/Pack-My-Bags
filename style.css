@@ -45,7 +45,7 @@ form {
   background-color: salmon;
 }
 .button:hover {
-  background-color:salmon;
+  background-color: salmon;
   opacity: 70%;
   transition: ease-in;
 }
@@ -66,8 +66,8 @@ form {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -92,4 +92,10 @@ form {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+#myBtn {
+  padding: 1%;
+  background: salmon;
+  color: white;
 }
