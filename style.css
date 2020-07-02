@@ -95,7 +95,14 @@ form {
 }
 
 #myBtn {
-  padding: 1%;
+  display: flex;
+  padding: 2%;
   background: salmon;
   color: white;
+  margin: auto;
+}
+
+.weatherDiv {
+  display: flex;
+  justify-content: space-around;
 }
