@@ -469,6 +469,9 @@ $("#travelInformation").on("submit", function (event) {
         }
       });
     });
+    $(document).ready(function(){
+        $('#myBtn').removeClass("hide");
+    });
   } else {
     alert("Select an end date 8 days from today.");
   }
