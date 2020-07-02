@@ -104,13 +104,12 @@ $("#travelInformation").on("submit", function (event) {
         avgTemp = avgTemp.toFixed(2);
 
         //show on the html the avg temp.
-        let weatherWrapper = $("<div>");
+        let weatherWrapper = $("<h4>");
 
         weatherWrapper.append(
           "The avg temperature for your trip will be: " + avgTemp + "&#8451;"
         );
 
-        weatherWrapper.addClass("center");
         $("#itemsList").append(weatherWrapper);
 
         //arrays with the weather conditions.
@@ -476,8 +475,7 @@ $("#travelInformation").on("submit", function (event) {
 });
 
 //function to add the number of items to bag.
-$(".btn-plus-min").on("click", function () {
-  console.log("clicked");
+$(document).on("click", ".btn-plus-min", function () {
   let $btnItem = $(this);
 
   console.log($btnItem);
