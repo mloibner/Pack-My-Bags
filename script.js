@@ -142,11 +142,12 @@ $("#travelInformation").on("submit", function(event) {
                 if (avgTemp < 16) {
                     if (valType === "beach") {
                         let resultList = beach.windy;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -157,21 +158,23 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
+
                         }
                         $("#itemsList").append(listWrapper);
                     }
                     if (valType === "city") {
                         let resultList = city.windy;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -182,22 +185,24 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
+
 
                         }
                         $("#itemsList").append(listWrapper);
                     }
                     if (valType === "country") {
                         let resultList = country.windy;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -208,11 +213,12 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
+
 
                         }
                         $("#itemsList").append(listWrapper);
@@ -221,11 +227,12 @@ $("#travelInformation").on("submit", function(event) {
                 if (avgTemp > 16 && avgTemp < 22) {
                     if (valType === "beach") {
                         let resultList = beach.rainy;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -236,22 +243,23 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
 
                         }
                         $("#itemsList").append(listWrapper);
                     }
                     if (valType === "city") {
                         let resultList = city.rainy;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -262,22 +270,23 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
 
                         }
                         $("#itemsList").append(listWrapper);
                     }
                     if (valType === "country") {
                         let resultList = country.rainy;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -288,11 +297,11 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
 
                         }
                         $("#itemsList").append(listWrapper);
@@ -301,11 +310,12 @@ $("#travelInformation").on("submit", function(event) {
                 if (avgTemp > 22) {
                     if (valType === "beach") {
                         let resultList = beach.sunny;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -316,22 +326,23 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
 
                         }
                         $("#itemsList").append(listWrapper);
                     }
                     if (valType === "city") {
                         let resultList = city.sunny;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -342,22 +353,23 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
 
                         }
                         $("#itemsList").append(listWrapper);
                     }
                     if (valType === "country") {
                         let resultList = country.sunny;
-                        let listWrapper = $("<div class='list-wrapper'>");
+                        let listWrapper = $("<ul class='list-wrapper'>");
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
 
                             let item = resultList[i];
+                            let itemWrapper = $("<li>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -368,14 +380,14 @@ $("#travelInformation").on("submit", function(event) {
 
                             let showQtdItem = $("<span class='qtd-item'>");
 
-                            showQtdItem.text(qtdItem);
+                            // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemBag.append(showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
 
-                            listWrapper.append(itemBag);
+                            listWrapper.append(itemWrapper);
 
                         }
-                        $("#    ").append(listWrapper);
+                        $("#itemsList").append(listWrapper);
                     }
                 }
             })
