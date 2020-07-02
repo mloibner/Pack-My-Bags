@@ -107,7 +107,7 @@ $("#travelInformation").on("submit", function(event) {
                 let weatherWrapper = $("<h4>");
 
                 weatherWrapper.append(
-                    "The avg temperature for your trip will be: " + avgTemp + "&#8451;"
+                    "The average temperature for your trip is: " + avgTemp + "&#8451;"
                 );
 
                 $("#itemsList").append(weatherWrapper);
