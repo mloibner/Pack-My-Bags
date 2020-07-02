@@ -169,7 +169,7 @@ $("#travelInformation").on("submit", function() {
 
                             showQtdItem.text(qtdItem);
 
-                            bagWrapper.append(showQtdItem, addBtn, minBtn);
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
                         }
@@ -178,10 +178,21 @@ $("#travelInformation").on("submit", function() {
                         let resultList = city.windy;
                         // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+                            let item = resultList[i];
 
-                            let bagWrapper = $("<p>");
+                            let bagWrapper = $("<p data-item =" + item + ">");
 
-                            bagWrapper.text(resultList[i]);
+                            bagWrapper.text(item);
+
+                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
+                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
+
+
+                            let showQtdItem = $("<span class='qtd-item'>");
+
+                            showQtdItem.text(qtdItem);
+
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
                         }
@@ -190,10 +201,21 @@ $("#travelInformation").on("submit", function() {
                         let resultList = country.windy;
                         // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+                            let item = resultList[i];
 
-                            let bagWrapper = $("<p>");
+                            let bagWrapper = $("<p data-item =" + item + ">");
 
-                            bagWrapper.text(resultList[i]);
+                            bagWrapper.text(item);
+
+                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
+                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
+
+
+                            let showQtdItem = $("<span class='qtd-item'>");
+
+                            showQtdItem.text(qtdItem);
+
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
 
@@ -205,10 +227,21 @@ $("#travelInformation").on("submit", function() {
                         let resultList = beach.rainy;
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+                            let item = resultList[i];
 
-                            let bagWrapper = $("<p>");
+                            let bagWrapper = $("<p data-item =" + item + ">");
 
-                            bagWrapper.text(resultList[i]);
+                            bagWrapper.text(item);
+
+                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
+                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
+
+
+                            let showQtdItem = $("<span class='qtd-item'>");
+
+                            showQtdItem.text(qtdItem);
+
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
                         }
@@ -217,10 +250,21 @@ $("#travelInformation").on("submit", function() {
                         let resultList = city.rainy;
                         // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+                            let item = resultList[i];
 
-                            let bagWrapper = $("<p>");
+                            let bagWrapper = $("<p data-item =" + item + ">");
 
-                            bagWrapper.text(resultList[i]);
+                            bagWrapper.text(item);
+
+                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
+                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
+
+
+                            let showQtdItem = $("<span class='qtd-item'>");
+
+                            showQtdItem.text(qtdItem);
+
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
                         }
@@ -229,13 +273,23 @@ $("#travelInformation").on("submit", function() {
                         let resultList = country.rainy;
                         // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+                            let item = resultList[i];
 
-                            let bagWrapper = $("<p>");
+                            let bagWrapper = $("<p data-item =" + item + ">");
 
-                            bagWrapper.text(resultList[i]);
+                            bagWrapper.text(item);
+
+                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
+                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
+
+
+                            let showQtdItem = $("<span class='qtd-item'>");
+
+                            showQtdItem.text(qtdItem);
+
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
-
                         }
                     }
                 }
@@ -244,10 +298,21 @@ $("#travelInformation").on("submit", function() {
                         let resultList = beach.sunny;
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+                            let item = resultList[i];
 
-                            let bagWrapper = $("<p>");
+                            let bagWrapper = $("<p data-item =" + item + ">");
 
-                            bagWrapper.text(resultList[i]);
+                            bagWrapper.text(item);
+
+                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
+                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
+
+
+                            let showQtdItem = $("<span class='qtd-item'>");
+
+                            showQtdItem.text(qtdItem);
+
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
                         }
@@ -256,10 +321,21 @@ $("#travelInformation").on("submit", function() {
                         let resultList = city.sunny;
                         // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+                            let item = resultList[i];
 
-                            let bagWrapper = $("<p>");
+                            let bagWrapper = $("<p data-item =" + item + ">");
 
-                            bagWrapper.text(resultList[i]);
+                            bagWrapper.text(item);
+
+                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
+                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
+
+
+                            let showQtdItem = $("<span class='qtd-item'>");
+
+                            showQtdItem.text(qtdItem);
+
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
                         }
@@ -268,10 +344,21 @@ $("#travelInformation").on("submit", function() {
                         let resultList = country.sunny;
                         // console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
+                            let item = resultList[i];
 
-                            let bagWrapper = $("<p>");
+                            let bagWrapper = $("<p data-item =" + item + ">");
 
-                            bagWrapper.text(resultList[i]);
+                            bagWrapper.text(item);
+
+                            let addBtn = $("<span class='plus button btn-plus-min'>+</span>");
+                            let minBtn = $("<span class='min button btn-plus-min'>-</span>");
+
+
+                            let showQtdItem = $("<span class='qtd-item'>");
+
+                            showQtdItem.text(qtdItem);
+
+                            bagWrapper.append(showQtdItem, minBtn, addBtn);
 
                             $("#itemsList").append(bagWrapper);
 
@@ -290,18 +377,19 @@ $("#travelInformation").on("submit", function() {
         alert("Select an end date 8 days from today.")
     }
 
+    $(".plus").on("click", function() {
+            let $btnItem = $(this);
+
+            console.log();
+        })
+        //
 
 
 
 
 })
 
-$(".plus").on("click", function() {
-        let $btnItem = $(this);
 
-        console.log();
-    })
-    //
 
 
 // Get the modal
