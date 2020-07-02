@@ -112,3 +112,7 @@ form {
   text-align: center;
   font-size: large;
 }
+
+.hide {
+  display: none;
+}
