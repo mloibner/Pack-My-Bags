@@ -107,7 +107,7 @@ $("#travelInformation").on("submit", function(event) {
                 let weatherWrapper = $("<h4>");
 
                 weatherWrapper.append(
-                    "The avg temperature for your trip will be: " + avgTemp + "&#8451;"
+                    "The average temperature of your trip is: " + avgTemp + "&#8451;"
                 );
 
                 $("#itemsList").append(weatherWrapper);
@@ -378,6 +378,7 @@ $("#travelInformation").on("submit", function(event) {
                         $("#itemsList").append(listWrapper);
                     }
                 }
+                $('#myBtn').removeClass('hide')
                 if (avgTemp > 22) {
                     if (valType === "beach") {
                         let resultList = beach.sunny;
