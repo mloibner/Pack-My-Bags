@@ -555,11 +555,11 @@ $(document).on("click", "#myBtn", function () {
 
   let valType = typeTravel.val();
 
-  dest.text("The destination of your trip is: " + valLocation);
+  dest.text("Your trip destination is: " + valLocation);
   dates.text(
-    "your trip will start in " + valStartDates + " and end on " + valEndDates
+    "Your trip will start on " + valStartDates + " and end on " + valEndDates
   );
-  type.text("the type of travel is: " + valType);
+  type.text("The type of trip you are taking is: " + valType);
 
   modalList.append(item);
 });
