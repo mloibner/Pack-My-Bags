@@ -107,11 +107,10 @@ $("#travelInformation").on("submit", function (event) {
         let weatherWrapper = $("<h4>");
 
         weatherWrapper.append(
-          "The avg temperature for your trip will be: " + avgTemp + "&#8451;"
+          "The average temperature of your trip is: " + avgTemp + "&#8451;"
         );
 
         $("#itemsList").append(weatherWrapper);
-        weatherWrapper.addClass("center");
 
         //arrays with the weather conditions.
         const condWindy = [
@@ -146,6 +145,7 @@ $("#travelInformation").on("submit", function (event) {
           dayWeatherTemp.addClass("weatherPadding");
           const dayWeatherCond = $("<span>");
           dayWeatherCond.addClass("weatherPadding");
+
           if ($.inArray(dayWeather, condWindy) > -1) {
             dayWeatherCond.append("<i class='fas fa-wind'></i>");
           }
@@ -393,6 +393,7 @@ $("#travelInformation").on("submit", function (event) {
             $("#itemsList").append(listWrapper);
           }
         }
+        $("#myBtn").removeClass("hide");
         if (avgTemp > 22) {
           if (valType === "beach") {
             let resultList = beach.sunny;
@@ -539,9 +540,16 @@ $("#travelInformation").on("submit", function (event) {
 
 $(document).on("click", "#myBtn", function () {
   const Item = $(".list-wrapper li");
+  const modal = $("#modalDiv");
 
   for (let i = 0; i < Item.length; i++) {
     let item = Item[i];
+
+    let name = item.closest("p");
+    let qtd = item.closest("input");
+
+    console.log(name);
+    console.log(qtd);
 
     let name = item.closest("p");
     let qtd = item.closest("input");
