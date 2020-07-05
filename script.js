@@ -523,10 +523,10 @@ $(document).on("click", "#myBtn", function() {
 
     for (let i = 0; i < Item.length; i++) {
 
+        let item = Item[i];
 
-
-        let name = Item[i].$("p").data("item");
-        let qtd = Item[i].$("input").data("item");
+        let name = item.closest("p");
+        let qtd = item.closest("input");
 
         console.log(name);
         console.log(qtd);

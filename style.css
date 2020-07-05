@@ -103,6 +103,24 @@ form {
 }
 
 .weatherDiv {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+.weatherPadding {
+  margin: 1%;
+}
+.center {
+  text-align: center;
+  font-size: large;
+}
+
+.hide {
+  display: none;
+}
+
+.list-wrapper {
   display: flex;
   justify-content: space-around;
 }
