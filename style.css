@@ -109,7 +109,7 @@ form {
 }
 
 .weatherPadding {
-  margin: 2%;
+  margin: 1%;
 }
 .center {
   text-align: center;
@@ -118,4 +118,9 @@ form {
 
 .hide {
   display: none;
+}
+
+.list-wrapper {
+  display: flex;
+  justify-content: space-around;
 }

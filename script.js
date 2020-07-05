@@ -157,7 +157,7 @@ $("#travelInformation").on("submit", function (event) {
           }
 
           dayWeatherDate.text(dayDate);
-          dayWeatherTemp.text(dayTemp);
+          dayWeatherTemp.text(dayTemp + " °C");
 
           dayWeaterWrapper.append(
             dayWeatherDate,
