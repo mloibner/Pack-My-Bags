@@ -166,3 +166,22 @@ form {
     border: none;
     cursor: auto;
 }
+
+#errorBox {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    background: purple;
+    padding: 5%;
+    color: yellow;
+    font-size: 25px;
+}
+
+#errorBox:hover {
+    border: 4px dotted yellow;
+    opacity: 0.5;
+}
+
+.hidden {
+    display: none;
+}
