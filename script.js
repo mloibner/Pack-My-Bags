@@ -10,7 +10,7 @@ const urlAPI = "https://api.openweathermap.org/data/2.5/onecall?";
 
 let result = {};
 
-let qtdItem = {};
+let bagItem = {};
 
 let country = {
     windy: ["Parker Jacket", "Jeans", "Socks", "Skivy", "Scalf"],
@@ -188,11 +188,13 @@ $("#travelInformation").on("submit", function(event) {
                                 "' class='min button btn-plus-min' type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item' data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -221,11 +223,13 @@ $("#travelInformation").on("submit", function(event) {
                                 "' class='min button btn-plus-min' type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item' data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -254,11 +258,13 @@ $("#travelInformation").on("submit", function(event) {
                                 "' class='min button btn-plus-min' type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item' data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -286,14 +292,16 @@ $("#travelInformation").on("submit", function(event) {
                             let minBtn = $(
                                 "<button data-item='" +
                                 item +
-                                "' class='min button btn-plus-min' type='button'>-</button>"
+                                "' class='min button btn-plus-min'  type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item' data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -322,11 +330,13 @@ $("#travelInformation").on("submit", function(event) {
                                 "' class='min button btn-plus-min' type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item' data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -355,11 +365,13 @@ $("#travelInformation").on("submit", function(event) {
                                 "' class='min button btn-plus-min' type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item' data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -390,11 +402,13 @@ $("#travelInformation").on("submit", function(event) {
                                 "' class='min button btn-plus-min' type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item' data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -423,11 +437,13 @@ $("#travelInformation").on("submit", function(event) {
                                 "' class='min button btn-plus-min' type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item'data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -456,11 +472,13 @@ $("#travelInformation").on("submit", function(event) {
                                 "' class='min button btn-plus-min' type='button'>-</button>"
                             );
 
-                            let showQtdItem = $("<span class='qtd-item'>");
+                            let showQtdItem = $("<input class='qtd-item' data-item='" +
+                                item +
+                                "' value='1' type='number'>");
 
                             // itemBag.append(showQtdItem, minBtn, addBtn);
 
-                            itemWrapper.append(itemBag, showQtdItem, minBtn, addBtn);
+                            itemWrapper.append(itemBag, showQtdItem);
 
                             listWrapper.append(itemWrapper);
                         }
@@ -474,14 +492,49 @@ $("#travelInformation").on("submit", function(event) {
     }
 });
 
-//function to add the number of items to bag.
-$(document).on("click", ".btn-plus-min", function() {
-    let $btnItem = $(this);
+// //function to add the number of items to bag.
+// $(document).on("click", ".btn-plus-min", function() {
 
 
-    console.log($btnItem);
-    console.log("test");
-});
+//     let count = 1;
+
+//     let $btnItem = $(this);
+//     let itemName = $btnItem.attr("data-item");
+
+//     if ($btnItem.hasClass("plus")) {
+//         count++;
+//     }
+//     if ($btnItem.hasClass("min")) {
+//         if (count > 0) {
+//             count--;
+//         }
+//     }
+
+
+//     // bagItem.item = { name: itemName, qtd: count };
+//     bagItem = new bagItem(count);
+
+//     console.log(itemName);
+//     console.log(bagItem);
+// });
+
+$(document).on("click", "#myBtn", function() {
+    const Item = $(".list-wrapper li");
+
+    for (let i = 0; i < Item.length; i++) {
+
+
+
+        let name = Item[i].$("p").data("item");
+        let qtd = Item[i].$("input").data("item");
+
+        console.log(name);
+        console.log(qtd);
+
+    }
+
+})
+
 
 // Get the modal
 var modal = document.getElementById("myModal");
