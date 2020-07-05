@@ -111,7 +111,7 @@ $("#travelInformation").on("submit", function (event) {
         );
 
         $("#itemsList").append(weatherWrapper);
-
+        weatherWrapper.addClass("center");
         //arrays with the weather conditions.
         const condWindy = [
           "Mist",
@@ -157,7 +157,7 @@ $("#travelInformation").on("submit", function (event) {
           }
 
           dayWeatherDate.text(dayDate);
-          dayWeatherTemp.text(dayTemp);
+          dayWeatherTemp.text(dayTemp + "°C");
 
           dayWeaterWrapper.append(
             dayWeatherDate,
