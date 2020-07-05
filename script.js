@@ -511,7 +511,10 @@ $("#travelInformation").on("submit", function (event) {
       });
     });
   } else {
-    alert("Select an end date 8 days from today.");
+    $("#errorBox").removeClass("hidden");
+    $("#errorBox").on("click", function () {
+      location.reload();
+    });
   }
 });
 
@@ -538,6 +541,8 @@ $("#travelInformation").on("submit", function (event) {
 //     console.log(itemName);
 //     console.log(bagItem);
 // });
+
+//refresh function
 
 // function to show info and backpack.
 $(document).on("click", "#myBtn", function () {
