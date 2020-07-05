@@ -171,7 +171,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -206,7 +206,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -241,7 +241,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -278,7 +278,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -313,7 +313,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -348,7 +348,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -386,7 +386,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -421,7 +421,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -456,7 +456,7 @@ $("#travelInformation").on("submit", function(event) {
                         //console.log(resultList);
                         for (let i = 0; i < resultList.length; i++) {
                             let item = resultList[i];
-                            let itemWrapper = $("<li>");
+                            let itemWrapper = $("<li class='large-2 cell'>");
 
                             let itemBag = $("<p data-item ='" + item + "'>");
 
@@ -519,24 +519,34 @@ $("#travelInformation").on("submit", function(event) {
 //     console.log(bagItem);
 // });
 
+// function to show info and backpack.
 $(document).on("click", "#myBtn", function() {
-    const Item = $(".list-wrapper li");
-    const modal = $("#modalDiv");
+    const item = $(".list-wrapper li");
+    const modalList = $(".backpack-list");
+    const dest = $(".Destination");
+    const dates = $(".Dates");
+    const type = $(".type");
 
 
-    for (let i = 0; i < Item.length; i++) {
+    let valLocation = travelLocation.val();
+    let valStartDates = startDates.val();
+    let valEndDates = endDates.val();
+    valStartDates = moment(valStartDates).format("DD MM YYYY");
+    valEndDates = moment(valEndDates).format("DD MM YYYY");
 
-        let item = Item[i];
+    let valType = typeTravel.val();
 
-        let name = item.closest("p");
-        let qtd = item.closest("input");
+    dest.text("The destination of your trip is: " + valLocation);
+    dates.text("your trip will start in " + valStartDates + " and end on " + valEndDates);
+    type.text("the type of travel is: " + valType);
+
+    modalList.append(item);
 
 
 
-        console.log(name);
-        console.log(qtd);
 
-    }
+
+
 
 })
 
