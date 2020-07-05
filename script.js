@@ -520,6 +520,8 @@ $("#travelInformation").on("submit", function(event) {
 
 $(document).on("click", "#myBtn", function() {
     const Item = $(".list-wrapper li");
+    const modal = $("#modalDiv");
+
 
     for (let i = 0; i < Item.length; i++) {
 
@@ -527,6 +529,8 @@ $(document).on("click", "#myBtn", function() {
 
         let name = item.closest("p");
         let qtd = item.closest("input");
+
+
 
         console.log(name);
         console.log(qtd);
