@@ -36,7 +36,7 @@ Now the list! Once you have submitted your form input, then based on the type of
 <br>
 <img src="Assets/images-for-read-me/enteritems.png">
 
-You're done! Click "Pack My Bags" to render your list of items to pack. 
+You're done! Click "Pack My Bags" to render your list of items to pack and then "click to shop" to take you to Amazon to purchase missing items from your list.
 <br>
 <img src="Assets/images-for-read-me/modal.png">
 
