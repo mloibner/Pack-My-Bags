@@ -7,12 +7,19 @@ Don't have those items available? That's not an issue, we have a link to take yo
 
 ## User Story
 AS A person who is going on a holiday 
+<br>
 I WANT weather results for my destination
+<br>
 THEN based on dates and average temperature
+<br>
 I WANT a list of clothing and items to take
+<br>
 THEN if I dont have that item
+<br>
 I WANT a link to purchase those items
+<br>
 SO THAT I have everything I appropriately need for my holiday
+
 
 ## Snippet Demonstration
 
