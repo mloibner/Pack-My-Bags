@@ -17,22 +17,30 @@ SO THAT I have everything I appropriately need for my holiday
 ## Snippet Demonstration
 
 When you open the application, you are presented with the home page.
+<br>
 <img src="Assets/images-for-read-me/frontpage.png">
 
 Then, enter your location and select the dates you are travelling.
+<br>
 <img src="Assets/images-for-read-me/selectdates.png">
 
 Once the dates are in, choose the type of travel you are taking to generate an appropriate clothing list.
+<br>
 <img src="Assets/images-for-read-me/triptype.png">
 
 On submit, you will be presented with a static map of your destination as well as a weather forecast for your trip and average trip temperature.
+<br>
 <img src="Assets/images-for-read-me/weathermap.png">
 
 Now the list! Once you have submitted your form input, then based on the type of trip and the average weather conditions, you will be presented with a list of suggested clothing to pack. You can alter the item count depending on how many of that item you want to pack. 
+<br>
 <img src="Assets/images-for-read-me/enteritems.png">
 
 You're done! Click "Pack My Bags" to render your list of items to pack. 
+<br>
 <img src="Assets/images-for-read-me/modal.png">
+
+
 
 ### Deployed URL:
 https://mloibner.github.io/Pack-My-Bags/
