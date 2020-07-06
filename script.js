@@ -37,6 +37,8 @@ $("#travelInformation").on("submit", function (event) {
   let valEndDates = endDates.val();
   let valType = typeTravel.val();
 
+  $("#mapPlace").empty();
+  
   let map = $("<img>");
   map.attr(
     "src",
@@ -52,6 +54,11 @@ $("#travelInformation").on("submit", function (event) {
   valEndDates = moment(valEndDates).unix();
 
   let maxEndDate = moment().add(9, "days").unix();
+
+  //Remove error message if dates within 8 days of todays date
+  if (maxEndDate > valEndDates) {
+    $("#errorBox").addClass("hidden");
+  };
 
   if (maxEndDate > valEndDates) {
     $.ajax({

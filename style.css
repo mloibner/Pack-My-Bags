@@ -171,14 +171,14 @@ form {
 
 #errorBox {
   text-align: center;
-  background: purple;
+  background: rgb(49, 48, 48);
   padding: 3%;
-  color: yellow;
+  color: salmon;
   font-size: 25px;
 }
 
 #errorBox:hover {
-  border: 4px dotted yellow;
+  border: 4px dotted salmon;
   opacity: 0.5;
 }
 
