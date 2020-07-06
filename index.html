@@ -30,8 +30,13 @@
                 <div class="grid-x grid-padding-x">
                     <div class="large-12 cell">
                         <label class="paddingPlease">Destination
-                            <input type="text" id="inputLocation" placeholder="Sydney">
+                            <input type="text" id="inputLocation" placeholder="Sydney" autocomplete="on" runat="server">
                         </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-padding-x">
+                    <div class="large-12 cell">
+                        <img src="https://maps.googleapis.com/maps/api/staticmap?center=sydney,nsw&size=1000x300&key=AIzaSyDg0UKan_KlUTWl4PlNyMfnkTIpONTAfN0" />
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
@@ -60,12 +65,10 @@
                     </div>
                     <div class="large-12 cell">
                         <div class="hidden" id="errorBox">
-                        WARNING ! <br>
-                        Select an end date 8 days from today.
-                        click to continue .. 
+                            WARNING ! <br> Select an end date 8 days from today. click to continue ..
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </form>

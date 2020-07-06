@@ -112,11 +112,11 @@ form {
 }
 
 #myBtn {
-    display: flex;
+    display: block;
     padding: 2%;
     background: salmon;
     color: white;
-    margin: auto;
+    margin: 12px auto;
 }
 
 .weatherDiv {
