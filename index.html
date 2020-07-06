@@ -35,11 +35,6 @@
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x">
-                    <div class="large-12 cell">
-                        <img src="https://maps.googleapis.com/maps/api/staticmap?center=sydney,nsw&size=1000x300&key=AIzaSyDg0UKan_KlUTWl4PlNyMfnkTIpONTAfN0" />
-                    </div>
-                </div>
-                <div class="grid-x grid-padding-x">
                     <div class="large-6 cell">
                         <label>Start Date
                             <input type="date" id="inputStartDates" class="span2" placeholder="01/01/2020">
@@ -74,6 +69,10 @@
         </form>
         <div class="list-container">
             <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div id="mapPlace" class="large-12 cell">
+                    </div>
+                </div>
                 <div class="innerWrapper" id="lists">
                     <div id="itemsList" class="itemsList"></div>
                 </div>
