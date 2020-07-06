@@ -552,7 +552,6 @@ $(document).on("click", "#myBtn", function() {
     const dates = $(".Dates");
     const type = $(".type");
 
-
     let valLocation = travelLocation.val();
     let valStartDates = startDates.val();
     let valEndDates = endDates.val();
@@ -567,24 +566,15 @@ $(document).on("click", "#myBtn", function() {
     );
     type.text("The type of trip you are taking is: " + valType);
 
-
-
-
-
-
     modalList.append(item);
 
     $(".backpack-list>li>input").each(function() {
         let itemQuantity = $(this).val();
 
-        $(this).attr('disabled', 'disabled');
-
-
+        $(this).attr("disabled", "disabled");
 
         console.log(itemQuantity);
     });
-
-
 });
 
 // Get the modal
