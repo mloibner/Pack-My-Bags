@@ -52,6 +52,10 @@ You're done! Click "Pack My Bags" to render your list of items to pack and then 
 ### Deployed URL:
 https://mloibner.github.io/Pack-My-Bags/
 
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
+
+
 ### Creators
 Created by: 
 Alvaro Fernandes - Main JS script writer and researcher
